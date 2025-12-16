@@ -17,4 +17,4 @@ require("plugins/bufferline")
 require("plugins/gitsigns")
 
 require("plugins/smear_cursor")
-
+require("plugins/telescope")

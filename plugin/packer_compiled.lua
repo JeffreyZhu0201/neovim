@@ -167,6 +167,11 @@ _G.packer_plugins = {
     path = "/Users/zhuzy2024/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/Users/zhuzy2024/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
   ["rainbow-delimiters.nvim"] = {
     loaded = true,
     path = "/Users/zhuzy2024/.local/share/nvim/site/pack/packer/start/rainbow-delimiters.nvim",
@@ -176,6 +181,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zhuzy2024/.local/share/nvim/site/pack/packer/start/smear-cursor.nvim",
     url = "https://github.com/sphamba/smear-cursor.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/Users/zhuzy2024/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,

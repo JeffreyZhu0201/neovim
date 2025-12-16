@@ -74,6 +74,11 @@ return require('packer').startup(function(use)
   use "lewis6991/gitsigns.nvim" -- 左则git提示
 
   use "sphamba/smear-cursor.nvim"
+  
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',  -- 文件检索
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
