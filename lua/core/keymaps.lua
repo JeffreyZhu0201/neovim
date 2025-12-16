@@ -20,8 +20,8 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- 切换buffer
-keymap.set("n", "<C-L>", ":BufferLineCycleNext<CR>")
-keymap.set("n", "<C-H>", ":BufferLineCyclePrev<CR>")
+keymap.set("n", "<S-K>", ":BufferLineCycleNext<CR>")
+keymap.set("n", "<S-J>", ":BufferLineCyclePrev<CR>")
 
 -- ---------- 插件 ---------- ---
 -- nvim-tree

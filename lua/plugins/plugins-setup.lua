@@ -18,8 +18,7 @@ vim.cmd([[
   augroup end
 ]])
 
-
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
   use {
@@ -51,10 +50,10 @@ return require('packer').startup(function(use)
         update_in_insert = true
       })
     end
-  }
-    -- 自动补全
+  } 
+  -- 自动补全
   use "hrsh7th/nvim-cmp"
-  -- use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lsp"
   use({
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     config = function()
@@ -68,20 +67,58 @@ return require('packer').startup(function(use)
 
 
   use "numToStr/Comment.nvim" -- gcc和gc注释
-  use "windwp/nvim-autopairs" -- 自动补全括号
+  -- use "windwp/nvim-autopairs" -- 自动补全括号
 
-  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
   use "lewis6991/gitsigns.nvim" -- 左则git提示
 
   use "sphamba/smear-cursor.nvim"
-  
+
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',  -- 文件检索
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+ 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
+  -- Copilot
+  use {
+    "zbirenbaum/copilot.lua",
+    event = "VimEnter",
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup({
+          suggestion = {
+            enabled = true,           -- 启用行内建议
+            auto_trigger = true,      -- 自动触发
+            debounce = 75,            -- 延迟时间（毫秒）
+          },
+          panel = { enabled = false },
+          
+
+        })
+      end, 100)
+    end,
+  }
+  
+  -- blink.cmp
+  use {
+    "saghen/blink.cmp",
+    requires = {
+      "giuxtaposition/blink-cmp-copilot",
+    },
+    config = function()
+      require("plugins.blink-cmp")
+    end,
+  }
+  use "xzbdmw/colorful-menu.nvim"
+  -- blink-cmp-copilot
+  use {
+    "giuxtaposition/blink-cmp-copilot",
+    after = { "copilot.lua" },
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
